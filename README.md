@@ -22,7 +22,7 @@ This solution automates the installation and ongoing updating of **TeamViewer** 
 
 ## Folder Structure
 
-
+```
 TeamViewerAutoWin32/
 ├── Install-TeamViewer.ps1
 ├── Register-TeamViewerUpdaterTask.ps1
@@ -134,7 +134,7 @@ powershell.exe -ExecutionPolicy Bypass -File "%~dp0Register-TeamViewerUpdaterTas
 ```
 
 ### Packaging Instructions
-- Use Microsoft’s packaging tool to create the .intunewin file:
+Use Microsoft’s packaging tool to create the .intunewin file:
 ```
 .\IntuneWinAppUtil.exe -c "C:\Path\To\TeamViewer" -s "install.cmd" -o "C:\Path\To\TeamViewer\Output"
 ```
@@ -152,8 +152,10 @@ App Type: Windows app (Win32)
 powershell.exe -ExecutionPolicy Bypass -Command "Get-WmiObject -Query \"SELECT * FROM Win32_Product WHERE Name LIKE 'TeamViewer%'\" | ForEach-Object { $_.Uninstall() }"
 ```
 
-**Install behavior:** System
-**Detection rules:** Use custom PowerShell detection script below
+**Install behavior:** System  
+
+**Detection rules:** Use custom PowerShell detection script below  
+
 
 ## Detection Script
 ```
@@ -173,21 +175,29 @@ if ([version]$version -ge [version]"15.66.5") {
 
 ## Local Validation (PowerShell)
 
-- **Check if the scheduled task exists:**  
+**Check if the scheduled task exists:**  
 
-```Get-ScheduledTask -TaskName "TeamViewer Auto-Update"```
+```
+Get-ScheduledTask -TaskName "TeamViewer Auto-Update"
+```
 
-- **View last and next run times:**  
+**View last and next run times:**  
 
-```Get-ScheduledTaskInfo -TaskName "TeamViewer Auto-Update"```
+```
+Get-ScheduledTaskInfo -TaskName "TeamViewer Auto-Update"
+```
 
-- **Run the task manually:**  
+**Run the task manually:**  
 
-```Start-ScheduledTask -TaskName "TeamViewer Auto-Update"```
+```
+Start-ScheduledTask -TaskName "TeamViewer Auto-Update"
+```
 
-- **View the trigger settings:**  
+**View the trigger settings:**  
 
-```(Get-ScheduledTask -TaskName "TeamViewer Auto-Update").Triggers```
+```
+(Get-ScheduledTask -TaskName "TeamViewer Auto-Update").Triggers
+```
 
 ## Summary of script
 
