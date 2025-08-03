@@ -220,4 +220,4 @@ Start-ScheduledTask -TaskName "TeamViewer Auto-Update"
 
 - Fully Intune-compatible via Win32 app model
 
-- No admin rights needed by end users
+- No admin rights needed by end users.
