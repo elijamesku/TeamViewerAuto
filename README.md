@@ -55,7 +55,7 @@ $LogDir = "$env:ProgramData\TeamViewerUpdater"
 $LogFile = "$LogDir\install_log.txt"
 $InstallerPath = "$env:TEMP\TeamViewer_Setup_x64.exe"
 $DownloadUrl = "https://download.teamviewer.com/download/TeamViewer_Setup_x64.exe"
-$ExePath = "C:\Program Files\TeamViewer\TeamViewer.exe"
+$ExePath = "C:\Program Files\TeamViewer\TeamViewer.exe" 
 $LatestVersion = "15.66.5"
 
 New-Item -ItemType Directory -Path $LogDir -Force | Out-Null
@@ -118,7 +118,7 @@ if ($NeedsInstall) {
 Write-Log "==== TeamViewer Install Script Complete ===="
 ```
 
-## Register-TeamViewerUpdaterTask.ps1
+## Register-TeamViewerUpdaterTask.ps1 -
 ```powershell
 
 # Registers a scheduled task that runs the TeamViewer install script
