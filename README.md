@@ -1,6 +1,6 @@
 # TeamViewer Auto-Updater 
 
-This solution automates the installation and ongoing updating of **TeamViewer** on Windows machines using Microsoft Intune. It ensures non-admin users receive the latest version of TeamViewer without UAC prompts by using system-level deployment and scheduled task automation
+This solution automates the installation and ongoing updating of **TeamViewer** on Windows machines using Microsoft Intune. It ensures non-admin users receive the latest version of TeamViewer without UAC prompts by using system-level deployment and scheduled task automation.
 
 
 ```                                
